@@ -14,14 +14,6 @@ int main(){
     int resAttempt , attempts = 0;
     cout << "Introduza a sua posicao:" << endl;
     cout << " - Coordenada(X pos):";
-    Introduza a sua posicao:
-    - Coordenada(X pos):100
-                        - Ordenada(Y pos):100
-    My attempt (50, 50), it's correct:2
-    My attempt (75, 75), it's correct:2
-    My attempt (
-    87, 87), it's correct:2
-    My attempt (93, 93), it's correct:2
     cin >> Xpos;
     cout << " - Ordenada(Y pos):";
     cin >> Ypos;
