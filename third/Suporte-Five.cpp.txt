@@ -1,0 +1,51 @@
+- 1º Tentativa P(50,50)
+	- Limites:
+		- Min X: 1
+		- Max X: 100
+		- Min Y: 1
+		- Max Y: 100
+	- Resposta: 2(NE) ↗
+	- Novos Limites:
+		- Min X: 50 [ (Max Xi / 2)] = Px
+		- Max X: 100
+		- Min Y: 50 [ (Max Yi / 2)] = Py
+		- Max Y: 100
+
+- 2º Tentativa P(75,75) [ (Max X + Min X) / 2 ], [ (Max Y + Min X) / 2 ]
+	- Limites:
+		- Min X: 50
+		- Max X: 100
+		- Min Y: 50
+		- Max Y: 100
+	- Resposta: 6(SW) ↙
+	- Novos Limites:
+		- Min X: 50
+		- Max X: 75 [ (Max Xi + Min Xi) / 2 ] = Px
+		- Min Y: 50
+		- Max Y: 75 [ (Max Yi + Min Yi) / 2 ] = Py
+
+- 3º Tentativa P(62,62) [ (Max X + Min X) / 2 ], [ (Max Y + Min X) / 2 ]
+	- Limites:
+		- Min X: 50
+		- Max X: 75
+		- Min Y: 50
+		- Max Y: 75
+	- Resposta: 8 (SE) ↘
+	- Novos Limites:
+		- Min X: 62 [ (Max Xi + Min Xi) / 2 ] = Px
+		- Max X: 75
+		- Min Y: 50
+		- Max Y: 62 [ (Max Yi + Min Yi) / 2 ] = Py
+
+- 4º Tentativa P(68,56)
+	- Limites:
+		- Min X: 62
+		- Max X: 75
+		- Min Y: 50
+		- Max Y: 62
+	- Resposta: 0 (NW) ↖
+	- Novos Limites:
+		- Min X: 62
+		- Max X: 68 [ (Max Xi + Min Xi) / 2 ] = Px
+		- Min Y: 56 [ (Max Yi + Min Yi) / 2 ] = Py
+		- Max Y: 62
