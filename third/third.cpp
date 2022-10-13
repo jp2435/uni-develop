@@ -7,11 +7,6 @@
 using namespace std;
 
 int main(){
-
-
-
-
-
     int Number;
     bool itsPrime = true;
 
