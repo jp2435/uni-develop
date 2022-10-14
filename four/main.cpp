@@ -45,7 +45,6 @@ int main() {
         }
     }
 
-    // cout << *(&arr + 1) << endl;
     // Tamanho do array = cout << *(&arr + 1) - arr << endl;
 
     return 0;
