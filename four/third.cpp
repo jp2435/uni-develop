@@ -15,7 +15,7 @@ int main(){
             break;
         }
         //cout << "DEV: counter = " << counter << endl;
-        if(counter >= 100 - 1){ // Numero do tamnho - 1(index começa em 0)
+        if(counter >= 100 - 1){ // Numero do tamanho - 1(index começa em 0)
             Veri = false;
             cout << "Tamanho do Array completado" << endl;
         }else if(inp <= 0){

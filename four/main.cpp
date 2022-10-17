@@ -2,23 +2,23 @@
 
 using namespace std;
 int main() {
-    int arr [20] = {};
+    int arr [11] = {};
     // counter também vai corresponder a length do array
     int inp, counter = 0;
     bool LastIndex = false;
 
     do{
-        cout << "Insere um numero entre 1 e 10, inclusive:";
+        cout << "Insere um numero:";
         cin >> inp;
-        if( (inp >= 1) && (inp <= 10)){
-            arr[counter] = inp;
+        arr[counter] = inp;
+        if(counter >= 9){
+            cout << "Tamanho do Array completado" << endl;
+            break;
+        }
+        if(inp !=0){
             counter++;
         }
-        else if(inp != 0){
-            cout << "Repete, numero invalido" << endl;
-        }
-    }while(inp != 0);
-
+    }while(inp !=0);
 
     // Realizar a inversão do Array
     int reverseArr[counter], Changer=0;
