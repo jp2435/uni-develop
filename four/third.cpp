@@ -8,12 +8,10 @@ int main(){
     int inp, counter = 0;
 
     do{
-        if(Veri){
-            cout << "Insere um nr positvo:";
-            cin >> inp;
-        }else{
-            break;
-        }
+
+        cout << "Insere um nr positvo:";
+        cin >> inp;
+
         //cout << "DEV: counter = " << counter << endl;
         if(counter >= 100 - 1){ // Numero do tamanho - 1(index começa em 0)
             Veri = false;
