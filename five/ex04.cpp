@@ -2,7 +2,7 @@
 #include <algorithm>
 
 using namespace std;
-int MaxFunc(int a,int b){
+int Max2(int a,int b){
     return max(a,b);
 }
 
@@ -13,6 +13,6 @@ int main(){
     cin >> a;
     cout << "b:";
     cin >> b;
-    cout << "The Maximum number is " << MaxFunc(a,b) << endl;
+    cout << "The Maximum number is " << Max2(a,b) << endl;
     return 0;
 }
