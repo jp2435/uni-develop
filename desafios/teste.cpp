@@ -1,4 +1,4 @@
-//Marta Oliveira 114259
+//MNome N mec
 
 #include <iomanip>
 #include <iostream>
@@ -10,8 +10,8 @@ void compararRef(int refVal, int valores[], unsigned int nVal);
 int main(){
     // a)
     cout << "a)\n"
-            "Nome: Marta Oliveira\n"
-            "NMec: 114259" ;
+            "Nome: {Nome}\n"
+            "NMec: {Nmec}" ;
 
     // b)
     cout << "\nb)\n";
