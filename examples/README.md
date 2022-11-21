@@ -1,3 +1,3 @@
 # Examples
 
-- (Struct declare on headers)[./struct-header]
+- [Struct declare on headers](./struct-header)
