@@ -1,19 +1,38 @@
 #include <iostream>
-#include <string>
 #include <fstream>
 #include <algorithm>
+
 #include <vector>
+#include <string>
 
 using namespace std;
 
-vector<int> lista;
+vector<double> lista;
 
+
+double Getmedia(){
+    double soma = 0;
+    for(double i : lista){
+        soma += i;
+    }
+    return (double)soma/lista.size();
+}
+void over(double reference){
+    for(double i: lista){
+        if(i>=reference){
+            cout << "Acima\n";
+        }else{
+            cout << "Abaixo\n";
+        }
+    }
+}
 int main(){
     string input;
-    cout << "Files name(# to finish):";
-    getline(cin,input,'#');
+    cout << "Coloque cada valor em uma linha separada\n"
+         << "Nome do arquivo ($ para finalizar):";
+
+    getline(cin,input,'$');
     ifstream inputFile;
-    //ofstream outFile;
 
 
     /**
@@ -31,16 +50,22 @@ int main(){
         cout << "Erro";
     }
     string Text;
-    /*getline(inputFile,Text);
-    cout << Text;*/
 
     while(getline(inputFile, Text)){
-        cout << Text << endl;
+        lista.push_back(stod(Text));
     }
 
-    // outFile << "Hello";
-    
+    /*
+     * String -> double = stod()
+     * String -> Long Double = stold()
+     * String -> int = stoi()
+     * String -> float = stof()
+     */
+
+
+    double media = Getmedia();
+    over(media);
+
     inputFile.close();
-    // outFile.close();
     return 0;
 }
