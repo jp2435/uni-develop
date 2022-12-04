@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <cmath>
 
 #include <vector>
 #include <string>
@@ -17,12 +18,21 @@ double Getmedia(){
     }
     return (double)soma/lista.size();
 }
-void over(double reference){
-    for(double i: lista){
-        if(i>=reference){
-            cout << "Acima\n";
-        }else{
-            cout << "Abaixo\n";
+double StandardDeviation(double MediaAr){
+    double dp = 0;
+
+    for(double value:lista){
+        dp += pow((value-MediaAr),2);
+    }
+    dp /= lista.size();
+    dp = sqrt(dp);
+    return dp;
+
+}
+void CheckOverAverage(double reference){
+    for(double value : lista){
+        if(value >= reference){
+            cout << value << " acima da referencia\n";
         }
     }
 }
@@ -34,7 +44,6 @@ int main(){
     getline(cin,input,'$');
     ifstream inputFile;
 
-
     /**
      * Necessário voltar um diretório atrás pois os códigos
      * são executados dentro da pasta *cmake-build-debug*
@@ -42,12 +51,13 @@ int main(){
     input = "../" + input;
     input.erase(remove(input.begin(),input.end(), ' '), input.end());
     input.erase(remove(input.begin(),input.end(), '\n'), input.end());
-    cout << input << endl;
+    cout << "Arquivo utilizado: " << input << endl;
     inputFile.open(input);
     // outFile.open("../out.txt");
 
     if(!inputFile.is_open()){
         cout << "Erro";
+        return 0;
     }
     string Text;
 
@@ -64,8 +74,10 @@ int main(){
 
 
     double media = Getmedia();
-    over(media);
-
+    double DP = StandardDeviation(media);
+    cout << "Media Aritmetrica: " << media
+         << "\nDesvio padrão: " << DP << endl;
+    CheckOverAverage(media);
     inputFile.close();
     return 0;
 }
