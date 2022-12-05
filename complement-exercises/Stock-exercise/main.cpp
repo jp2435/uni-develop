@@ -70,8 +70,9 @@ void InserirProduto(){
 void ImprimirProdutos(){
     system("CLS");
     bool CheckFirstTime = true;
-    cout << "Lista de produtos" << endl;
-    cout << "-----------------" << endl;
+    cout << "Lista de produtos\n";
+    cout << setw(17) << setfill('-');
+    cout << '\n';
     for(Prod_t produto: ListaProdutos){
         if(!CheckFirstTime){
             cout << "/\\/\\/\\/\\/\\/\\/\\/\\\n";
@@ -82,6 +83,26 @@ void ImprimirProdutos(){
         cout << "Preco: " << produto.preco << endl;
         cout << "Quantidade: " << produto.quantidade << endl;
         cout << "\\/\\/\\/\\/\\/\\/\\/\\/\n";
+    }
+    system("PAUSE");
+}
+void AnaliseStock(){
+    system("CLS");
+    bool Checker = true;
+    cout << "Produtos em necessidade de stock\n";
+    cout << setw(33) << setfill('-'); cout << '\n';
+    for(Prod_t produto: ListaProdutos){
+        if(produto.quantidade<5){
+            Checker=false;
+            cout << setw(12) << left << setfill(' ') << right << "Produto ID: " << produto.ID << endl
+                 << setw(12) << left << setfill(' ') << right << "Nome: " << produto.nome << endl
+                 << setw(12) << left << setfill(' ') << right << "Preco: " << produto.preco << endl
+                 << setw(12) << left << setfill(' ') << right << "Quantidade: " << produto.quantidade << endl
+                 << "\\/\\/\\/\\/\\/\\/\\/\\/\n";
+        }
+    }
+    if(Checker){
+        cout << "Nao existe necessidade de reposicao de stock\n";
     }
     system("PAUSE");
 }
@@ -104,6 +125,7 @@ int main(){
                 ImprimirProdutos();
                 break;
             case 3:
+                AnaliseStock();
                 break;
             case 4:
                 break;
@@ -115,7 +137,6 @@ int main(){
                 system("CLS");
                 cout << "O programa ira encerrar\n";
                 system("TIMEOUT /T 2");
-
                 return 0;
             default:
                 cout << "\nOpção Errada! Tente novamente\n";
