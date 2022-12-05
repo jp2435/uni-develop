@@ -69,7 +69,20 @@ void InserirProduto(){
 }
 void ImprimirProdutos(){
     system("CLS");
-    
+    bool CheckFirstTime = true;
+    cout << "Lista de produtos" << endl;
+    cout << "-----------------" << endl;
+    for(Prod_t produto: ListaProdutos){
+        if(!CheckFirstTime){
+            cout << "/\\/\\/\\/\\/\\/\\/\\/\\\n";
+        }
+        CheckFirstTime=false;
+        cout << "Produto ID:" << produto.ID << endl;
+        cout << "Nome: " << produto.nome << endl;
+        cout << "Preco: " << produto.preco << endl;
+        cout << "Quantidade: " << produto.quantidade << endl;
+        cout << "\\/\\/\\/\\/\\/\\/\\/\\/\n";
+    }
     system("PAUSE");
 }
 int main(){
@@ -88,6 +101,7 @@ int main(){
                 InserirProduto();
                 break;
             case 2:
+                ImprimirProdutos();
                 break;
             case 3:
                 break;
@@ -97,11 +111,17 @@ int main(){
                 break;
             case 6:
                 break;
+            case 7:
+                system("CLS");
+                cout << "O programa ira encerrar\n";
+                system("TIMEOUT /T 2");
+
+                return 0;
             default:
-                cout << "Opção Errada! Tente novamente";
+                cout << "\nOpção Errada! Tente novamente\n";
                 system("PAUSE");
+                break;
         }
     }while(true);
-
     return 0;
 }
