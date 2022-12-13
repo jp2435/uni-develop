@@ -86,12 +86,12 @@ Time_t CalculateTime(Time_t Entrada,Time_t Saida){
         MCin = 1;
         SRes = 60 + SRes;
     }
-    MRes = Saida.Minute - Entrada.Minute;
+    MRes = (Saida.Minute - Entrada.Minute) - MCin;
     if(MRes<0){
         HCin = 1;
         MRes = 60 + MRes;
     }
-    HRes = Saida.Hour - Entrada.Hour;
+    HRes = (Saida.Hour - Entrada.Hour) - HCin;
 
     return Time_t{HRes,MRes,SRes};
 }
