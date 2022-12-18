@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Desafio1 114412.cpp)
 add_executable(Dessa main.cpp)
+add_executable(TestDes2 ExTeste.cpp)
